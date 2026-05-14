@@ -22,12 +22,188 @@
             </label>
             
             <ul class="nav-links">
-                <li><a href="/">Home</a></li>
+                <li><a href="/index.html">Home</a></li>
                 <li class="nav-buttons">
-                    <a class="secondary-button" href="/index.html">Back</a>
+                    <a class="secondary-button" href="/login.html">Login</a>
                 </li>
             </ul>
         </div>
     </nav>
+        <section class="auth-section">
+        <div class="auth-overlay"></div>
+        <div class="auth-container">
+            <div class="auth-box onboarding-box">
+                <!-- Progress Indicator -->
+                <div class="onboarding-progress">
+                    <div class="progress-step active" data-step="1">
+                        <div class="step-circle">1</div>
+                        <span>Account</span>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="2">
+                        <div class="step-circle">2</div>
+                        <span>Profile</span>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="3">
+                        <div class="step-circle">3</div>
+                        <span>Career Goals</span>
+                    </div>
+                </div>
+
+                <!-- Step 1: Account Creation -->
+                <div class="onboarding-step active" id="step1">
+                    <div class="auth-header">
+                        <h1>Create your account</h1>
+                        <p>Start your journey to career clarity</p>
+                    </div>
+                    <form class="auth-form" id="step1Form">
+                        <div class="form-group">
+                            <label for="fullname">Full name</label>
+                            <div class="input-wrapper">
+                                <span class="material-symbols-outlined">person</span>
+                                <input type="text" id="fullname" name="fullname" placeholder="Jane Doe" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <div class="input-wrapper">
+                                <span class="material-symbols-outlined">mail</span>
+                                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-wrapper">
+                                <span class="material-symbols-outlined">lock</span>
+                                <input type="password" id="password" name="password" placeholder="Create a strong password" required>
+                            </div>
+                        </div>
+                        <button type="button" class="auth-button" onclick="nextStep(2)">Continue</button>
+                    </form>
+                    <div class="auth-divider">
+                        <span>or sign up with</span>
+                    </div>
+                    <div class="social-auth">
+                        <button class="social-button google">
+                            <svg width="18" height="18" viewBox="0 0 18 18">
+                                <path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z"/>
+                                <path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.258c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332C2.438 15.983 5.482 18 9 18z"/>
+                                <path fill="#FBBC05" d="M3.964 10.707c-.18-.54-.282-1.117-.282-1.707s.102-1.167.282-1.707V4.961H.957C.347 6.175 0 7.55 0 9s.348 2.825.957 4.039l3.007-2.332z"/>
+                                <path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.961L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z"/>
+                            </svg>
+                            Google
+                        </button>
+                        <button class="social-button linkedin">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                            LinkedIn
+                        </button>
+                    </div>
+                    <div class="auth-footer">
+                        <p>Already have an account? <a href="login.html">Log in</a></p>
+                    </div>
+                </div>
+
+                <!-- Step 2: Profile Info -->
+                <div class="onboarding-step" id="step2">
+                    <div class="auth-header">
+                        <h1>Tell us about yourself</h1>
+                        <p>Help us personalize your experience</p>
+                    </div>
+                    <form class="auth-form" id="step2Form">
+                        <div class="form-group">
+                            <label for="currentRole">Current role</label>
+                            <div class="input-wrapper">
+                                <span class="material-symbols-outlined">work</span>
+                                <input type="text" id="currentRole" name="currentRole" placeholder="e.g., Marketing Manager" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">Years of experience</label>
+                            <div class="input-wrapper">
+                                <span class="material-symbols-outlined">schedule</span>
+                                <select id="experience" name="experience" required>
+                                    <option value="">Select experience</option>
+                                    <option value="0-2">0-2 years</option>
+                                    <option value="3-5">3-5 years</option>
+                                    <option value="6-10">6-10 years</option>
+                                    <option value="10+">10+ years</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="industry">Current industry</label>
+                            <div class="input-wrapper">
+                                <span class="material-symbols-outlined">business</span>
+                                <input type="text" id="industry" name="industry" placeholder="e.g., Healthcare, Finance, Tech" required>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="back-button" onclick="previousStep(1)">Back</button>
+                            <button type="button" class="auth-button" onclick="nextStep(3)">Continue</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Step 3: Career Goals -->
+                <div class="onboarding-step" id="step3">
+                    <div class="auth-header">
+                        <h1>What's your career goal?</h1>
+                        <p>We'll create a personalized roadmap for you</p>
+                    </div>
+                    <form class="auth-form" id="step3Form">
+                        <div class="form-group">
+                            <label for="targetRole">Target role</label>
+                            <div class="input-wrapper">
+                                <span class="material-symbols-outlined">flag</span>
+                                <input type="text" id="targetRole" name="targetRole" placeholder="e.g., Data Scientist, UX Designer" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="timeline">Timeline for transition</label>
+                            <div class="input-wrapper">
+                                <span class="material-symbols-outlined">event</span>
+                                <select id="timeline" name="timeline" required>
+                                    <option value="">Select timeline</option>
+                                    <option value="3">3 months</option>
+                                    <option value="6">6 months</option>
+                                    <option value="12">1 year</option>
+                                    <option value="24">2+ years</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>What motivated this change?</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="motivation" value="passion" required>
+                                    <span>Following my passion</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="motivation" value="growth">
+                                    <span>Career growth</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="motivation" value="balance">
+                                    <span>Better work-life balance</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="motivation" value="compensation">
+                                    <span>Higher compensation</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="back-button" onclick="previousStep(2)">Back</button>
+                            <button type="submit" class="auth-button">Complete setup</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./assets/js/onboarding.js"></script>
 </body>
 </html>
